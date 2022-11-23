@@ -13,15 +13,20 @@ createGrid(16);
 function createGrid(rows){
 
     rows = parseInt(rows);
-    let index = 1;
     gridSize = rows * rows;
     container.innerHTML = "";
 
     for(let i = 0; i < gridSize; i++){
-        if(i !== 0 && i % rows === 0)
-            index++;
         const div = document.createElement("div");
-        div.className = `row${index}`;
+        div.className = `grid`;
         container.appendChild(div);
     }
+
+    const style = document.createElement("style");
+    style.innerText = `  
+    .grid{
+        height: ${800/rows}px;
+        width: ${800/rows}px;
+    }`;
+    const body = document.head.appendChild(style);
 }
