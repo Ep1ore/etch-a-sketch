@@ -22,6 +22,9 @@ function createGrid(rows){
     for(let i = 0; i < gridSize; i++){
         const div = document.createElement("div");
         div.className = `grid`;
+        div.addEventListener("mouseover", function(){
+            div.style.backgroundColor = "black";
+        })
         container.appendChild(div);
     }
 
