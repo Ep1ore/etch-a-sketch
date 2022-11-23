@@ -11,8 +11,11 @@ const container = document.querySelector("#container");
 createGrid(16);
 
 function createGrid(rows){
-
     rows = parseInt(rows);
+    if(rows > 100){
+        alert("Introduce a number equal or less than 100");
+        return;
+    }
     gridSize = rows * rows;
     container.innerHTML = "";
 
